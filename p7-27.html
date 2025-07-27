@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인터랙티브 칠판 2: 18세기 북학파와 청나라</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Nanum+Pen+Script', cursive;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            font-size: 1.6rem;
+            line-height: 1.8;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+        }
+        .chalkboard {
+            background-image: url('https://www.transparenttextures.com/patterns/green-dust-and-scratches.png');
+            background-color: #34495e;
+            border: 20px solid #8B4513;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5), inset 0 0 15px rgba(0,0,0,0.5);
+            padding: 2rem 3rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+            cursor: pointer;
+        }
+        .title {
+            font-size: 3.5rem;
+            color: #f1c40f;
+            text-align: center;
+            border-bottom: 2px dashed rgba(236, 240, 241, 0.5);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        .subtitle {
+            font-size: 2.8rem;
+            color: #e74c3c;
+            margin-bottom: 1.5rem;
+        }
+        .keyword {
+            color: #3498db;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+            margin-bottom: 1rem;
+        }
+        .reveal-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .comparison-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .table-cell {
+            padding: 1.5rem;
+            border: 1px solid rgba(236, 240, 241, 0.4);
+            border-radius: 5px;
+        }
+        .table-header {
+            font-size: 2.2rem;
+            color: #9b59b6;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 1rem;
+        }
+        li.point::before {
+            content: "▶ ";
+            color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chalkboard" id="chalkboard">
+        <h1 class="title reveal-item">2교시: 18세기 북학파, 청을 바라보는 두 시선</h1>
+
+        <div class="section">
+            <h2 class="subtitle reveal-item">[1] 같은 청나라, 다른 생각</h2>
+            <ul class="reveal-item">
+                <li class="point">18세기 북학파, 청에 다녀와 <span class="keyword">연행록</span>을 쓰다!</li>
+                <li class="point">그런데... 같은 곳을 보고 와도 생각이 달랐던 이유는?</li>
+                <li class="point" style="padding-left: 2rem;">➡️ 바로 <span class="keyword">"중화 관념"</span>을 어떻게 받아들였는지 달랐기 때문!</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="subtitle reveal-item">[2] 박제가 vs 이덕무 : 동상이몽 연행록</h2>
+            <div class="comparison-table reveal-item">
+                <div class="table-cell reveal-item">
+                    <div class="table-header">박제가 (『북학의』)</div>
+                    <ul>
+                        <li class="point"><strong>시선:</strong> 청 = <span class="keyword">조선이 지향할 모델!</span></li>
+                        <li class="point"><strong>관점:</strong> 청나라에 '중화'가 완벽히 보존되어 있다! (중화 절대주의)</li>
+                        <li class="point"><strong>주장:</strong> 조선의 독자성 < 중화와의 합치.</li>
+                        <li class="point"><strong>태도:</strong> <span class="keyword">실용주의!</span> 이익 추구 OK! (명에 대한 의리는 이제 그만~)</li>
+                    </ul>
+                </div>
+                <div class="table-cell reveal-item">
+                    <div class="table-header">이덕무 (「입연기」)</div>
+                    <ul>
+                        <li class="point"><strong>시선:</strong> <span class="keyword">객관적 관찰자</span> (민생과 무관한 조치 비판)</li>
+                        <li class="point"><strong>관점:</strong> 청과 조선, 양쪽 모두의 가치를 인정하자! (<span class="keyword">평등</span>)</li>
+                        <li class="point"><strong>주장:</strong> 청 배우기 + 조선식으로 살기 = 모순 아님.</li>
+                        <li class="point"><strong>태도:</strong> <span class="keyword">이중적 모습?</span> (청의 문물 인정 vs. 변해버린 모습에 비통, 명에 대한 의리)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+             <h2 class="subtitle reveal-item">[3] 그렇다면, 실제 18세기 청나라는? (겉과 속)</h2>
+             <p class="reveal-item">북학파들이 본 청의 모습은 과연 전부였을까?</p>
+             <div class="comparison-table reveal-item">
+                <div class="table-cell reveal-item">
+                    <div class="table-header">겉모습: 화려한 번영 ✨</div>
+                    <ul>
+                        <li class="point">경제 발전 정점!</li>
+                        <li class="point">활발한 국내/외 교역 (은 유입 ➡️ 상품 경제 활성화)</li>
+                        <li class="point">세계 경제와 긴밀하게 연결!</li>
+                    </ul>
+                </div>
+                <div class="table-cell reveal-item">
+                    <div class="table-header">속사정: 위기의 씨앗 💣</div>
+                    <ul>
+                        <li class="point"><span class="keyword">인구 폭발!</span> ➡️ 식량 문제, 사회 유대 약화</li>
+                        <li class="point">불법 결사 조직 성행 (훗날 반란의 기반)</li>
+                        <li class="point">관료 사회 부패 심화</li>
+                        <li class="point">통치자들의 불안 ➡️ 무역 개방 축소</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section reveal-item">
+             <p style="margin-top:1.5rem; font-size: 2.5rem; text-align:center; color:#3498db;">
+                결론: 북학파들은 청의 '번영'을 보고 개혁을 주장했지만, 그 이면의 '위기'는 깊이 보지 못했을 수 있다.
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        const chalkboard = document.getElementById('chalkboard');
+        const revealItems = document.querySelectorAll('.reveal-item');
+        let currentIndex = 0;
+
+        function revealNext() {
+            if (currentIndex < revealItems.length) {
+                const currentItem = revealItems[currentIndex];
+                currentItem.classList.add('visible');
+                setTimeout(() => {
+                    currentItem.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center',
+                        inline: 'nearest'
+                    });
+                }, 100);
+                currentIndex++;
+            }
+        }
+
+        function initialize() {
+            currentIndex = 0;
+            revealItems.forEach(item => {
+                item.classList.remove('visible');
+            });
+            revealNext();
+        }
+
+        chalkboard.addEventListener('click', revealNext);
+        window.onload = initialize;
+    </script>
+</body>
+</html>
