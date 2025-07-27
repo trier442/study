@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>인터랙티브 칠판 2: 18세기 북학파와 청나라</title>
+    <title>주제 통합 칠판 판서</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,13 +31,17 @@
             max-width: 1200px;
             cursor: pointer;
         }
-        .title {
+        .main-title {
             font-size: 3.5rem;
             color: #f1c40f;
             text-align: center;
             border-bottom: 2px dashed rgba(236, 240, 241, 0.5);
             padding-bottom: 1rem;
             margin-bottom: 2rem;
+        }
+        .topic-divider {
+            border-top: 4px double #f1c40f;
+            margin: 4rem 0;
         }
         .subtitle {
             font-size: 2.8rem;
@@ -61,7 +65,7 @@
         }
         .comparison-table {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
             margin-top: 1.5rem;
         }
@@ -69,6 +73,8 @@
             padding: 1.5rem;
             border: 1px solid rgba(236, 240, 241, 0.4);
             border-radius: 5px;
+            display: flex;
+            flex-direction: column;
         }
         .table-header {
             font-size: 2.2rem;
@@ -79,17 +85,25 @@
         ul {
             list-style-type: none;
             padding-left: 1rem;
+            flex-grow: 1;
         }
         li.point::before {
             content: "▶ ";
             color: #e67e22;
+        }
+        .example {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed rgba(236, 240, 241, 0.2);
+            color: #2ecc71;
         }
     </style>
 </head>
 <body>
 
     <div class="chalkboard" id="chalkboard">
-        <h1 class="title reveal-item">2교시: 18세기 북학파, 청을 바라보는 두 시선</h1>
+        <!-- 북학파 주제 -->
+        <h1 class="main-title reveal-item">18세기 북학파, 청을 바라보는 두 시선</h1>
 
         <div class="section">
             <h2 class="subtitle reveal-item">[1] 같은 청나라, 다른 생각</h2>
@@ -151,6 +165,78 @@
         <div class="section reveal-item">
              <p style="margin-top:1.5rem; font-size: 2.5rem; text-align:center; color:#3498db;">
                 결론: 북학파들은 청의 '번영'을 보고 개혁을 주장했지만, 그 이면의 '위기'는 깊이 보지 못했을 수 있다.
+            </p>
+        </div>
+
+        <!-- 주제 구분선 -->
+        <div class="topic-divider reveal-item"></div>
+
+        <!-- 사법 주제 -->
+        <h1 class="main-title reveal-item">사법의 계약과 효력</h1>
+
+        <div class="section">
+            <h2 class="subtitle reveal-item">[1] 기본 원칙: "계약은 자유다!"</h2>
+            <ul class="reveal-item">
+                <li class="point">사법(私法) 영역에서는 <span class="keyword">"계약 자유의 원칙"</span>이 적용돼.</li>
+                <li class="point">따라서, 법 조문과 계약 내용이 다르면? ➡️ <span class="keyword">계약 내용이 우선!</span> (당사자 의사 존중)</li>
+            </ul>
+            <div class="table-cell reveal-item" style="margin-top: 2rem; border-color: #f1c40f;">
+                <div class="table-header" style="color: #f1c40f;">임의 법규</div>
+                <ul>
+                    <li class="point">당사자가 계약으로 내용을 바꿀 수 있는 법규.</li>
+                    <li class="point">사법은 대부분 임의 법규야.</li>
+                </ul>
+                <div class="example">
+                    <strong>예시)</strong> "방충망 파손은 세입자가 고친다" 계약 ➡️ 건물주 수선 의무(법)보다 우선!
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="subtitle reveal-item">[2] 예외: "하지만 이건 안돼!" (국가의 개입)</h2>
+            <p class="reveal-item">사회 질서, 공공복리 등을 위해 국가가 개입하는 경우가 있어. (단, <span class="keyword">비례 원칙</span> 준수!)</p>
+            <p class="reveal-item">이때 법규는 크게 두 가지로 나뉘어!</p>
+            
+            <div class="comparison-table reveal-item">
+                <div class="table-cell reveal-item">
+                    <div class="table-header">단속 법규</div>
+                    <ul>
+                        <li class="point"><strong>계약 효력:</strong> <span style="color:#2ecc71; font-weight:bold;">유효 (O)</span></li>
+                        <li class="point"><strong>법적 불이익:</strong> 벌금, 과태료 있음.</li>
+                        <li class="point"><strong>급부 의무:</strong> 계약대로 이행해야 함!</li>
+                    </ul>
+                    <div class="example">
+                        <strong>예시)</strong> 공인 중개사가 자기 소유 부동산을 직접 파는 계약. (중개사는 벌금, 계약은 유효!)
+                    </div>
+                </div>
+                <div class="table-cell reveal-item">
+                    <div class="table-header">강행 법규</div>
+                    <ul>
+                        <li class="point"><strong>계약 효력:</strong> <span style="color:#e74c3c; font-weight:bold;">무효 (X)</span></li>
+                        <li class="point"><strong>법적 불이익:</strong> 당연히 있음.</li>
+                        <li class="point"><strong>급부 의무:</strong> 이행할 필요 없음!</li>
+                    </ul>
+                    <div class="example">
+                        <strong>예시)</strong> 의사와 비의료인의 병원 동업 계약. (계약 자체가 무효!)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+             <h2 class="subtitle reveal-item">[3] 계약이 '무효'가 되면? (강행 법규 위반의 결과)</h2>
+             <ul class="reveal-item">
+                <li class="point">이미 돈이나 물건을 넘겼다면? ➡️ <span class="keyword">"부당 이득"</span>에 해당!</li>
+                <li class="point">따라서, <span class="keyword">부당 이득 반환 청구권</span>이 인정돼. (돌려달라고 할 수 있음)</li>
+                <li class="point" style="color:#e74c3c;"><strong>단, 예외 중의 예외!</strong></li>
+                <li class="point" style="padding-left: 2rem;">급부 내용이 <span class="keyword">비도덕적 / 반사회적</span>이라면? (예: 위조지폐 제작)</li>
+                <li class="point" style="padding-left: 2rem;">➡️ 계약도 무효, 돌려받을 권리도 <span class="keyword">인정 안 됨!</span></li>
+             </ul>
+        </div>
+        
+        <div class="section reveal-item">
+             <p style="margin-top:1.5rem; font-size: 2.5rem; text-align:center; color:#3498db;">
+                정리: 계약은 자유가 원칙이지만, 사회 질서를 위해 단속/강행 법규로 제한될 수 있다!
             </p>
         </div>
 
